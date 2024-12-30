@@ -1,0 +1,90 @@
+/* Popup overlay with blur effect */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .popup-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  
+  /* Popup content */
+  .popup-content {
+    
+    
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 10px;
+   /* background-color: blue; */
+    max-width: 250px;
+    max-height: 250px;
+    height: 90%;
+    width: 90%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  .popup-inner{
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #e5e6e8;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .popup-overlay.open .popup-content {
+    transform: translateY(0);
+  }
+  
+  /* Animation container (example) */
+  .heading-container {
+   text-align: center;
+   font-weight: 500;
+   font-size: 24px;
+   width: 100%;
+   color: #94979d;   /* background-color: aqua; */
+  }
+  .btns{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* background-color: beige; */
+  }
+  .btns button{
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    /* background-color: blueviolet; */
+  }
+  .btn1{
+    background-color: #fff;
+    color: #1175ee;
+    border: 1px solid #1175ee;
+  }
+  .btn2{
+    background-color: #1175ee;
+    color: #fff;
+    border: 1px solid #94979d;
+  }
+  
