@@ -1,81 +1,165 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-.screenContainer{
+
+.screenContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex: 1;
-    /* background-color: aquamarine; */
     height: 100vh;
     width: 100vw;
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #003366, #004080, #0059b3, #0073e6);
+    animation: fadeInScreen 1s ease-in-out;
 }
-.top{
+
+@keyframes fadeInScreen {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.top {
     text-align: center;
-    font-size: 22px;
-    margin-top: 30px;
-    font-weight: 500;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffffff; /* Change text color to white for better contrast */
+    animation: fadeInText 1.2s ease-in-out, moveUpDown 1.5s ease-in-out infinite alternate;
+    transition: transform 0.3s, color 0.3s;
 }
-.detailsCard{
+
+.top:hover {
+    transform: scale(1.05);
+    color: #ffcc00; /* Change text color on hover for visual appeal */
+}
+
+@keyframes fadeInText {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUpDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+.detailsCard {
     width: 90%;
-    border-radius: 8px;
-    border: 1px solid silver;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: white;
+    padding: 20px;
+    animation: slideInCard 1s ease-in-out;
 }
-.detailsCard h3{
-    font-size: 18px;
+
+@keyframes slideInCard {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.detailsCard h3 {
+    font-size: 20px;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
+    color: #003366; /* Change heading color to match the new theme */
     padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
-.paymentContainer{
+
+.paymentContainer {
     width: 100%;
-    border-bottom: 1px solid silver;
-    border-top: 1px solid silver;
-
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInSection 1.5s ease-in-out;
 }
 
-.info{
+@keyframes fadeInSection {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 10px;
+    margin: 10px 20px;
 }
-.info h4{
+
+.info h4 {
     width: 35%;
     text-align: start;
-
+    color: #003366; /* Change text color to match the new theme */
+    font-weight: 500;
 }
-.info .arrow{
+
+.info .arrow {
     width: 15%;
     text-align: center;
+    color: #00796b; /* You can change this to a color that fits your theme */
 }
-.info .data{
+
+.info .data {
     width: 40%;
     text-align: center;
     font-size: 15px;
     display: flex;
     justify-content: center;
+    color: #00796b; /* You can change this to a color that fits your theme */
 }
-.info .success{
-    width: 25%;
+
+.info .success img {
+    width: 30px;
+    height: 30px;
+    animation: bounceSuccess 1s infinite alternate;
 }
-.txnid{
-    font-size: 13px;
+
+@keyframes bounceSuccess {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
-.homebtn{
+
+.txnid {
+    font-size: 14px;
+    color: #00796b; /* You can change this to a color that fits your theme */
+    font-weight: 500;
+}
+
+.homebtn {
+    margin-top: 20px;
     width: 70%;
-    border: 2px solid rgb(0, 119, 255);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
     padding: 15px 35px;
     border-radius: 15px;
-    background-color: rgb(0, 145, 255);
+    background: linear-gradient(to right, #003366, #004080, #0059b3, #0073e6);
     margin-bottom: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.homebtn h4{
+
+.homebtn h4 {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    color: aliceblue;
+    color: white;
+}
+
+.homebtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+a {
+    text-decoration: none;
+    color: #0288d1; /* You can change this to a color that fits your theme */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #01579b; /* You can change this to a color that fits your theme */
 }

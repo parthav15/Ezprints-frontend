@@ -177,11 +177,12 @@ const verifyPayment = async (paymentDetails) => {
         setTimeout(() => {
             
             setPopupOpen(false);
-        
+            navigate(`/details/${verificationData.print_job_id}`);
           }, 3000);
 
         }else{
           console.log("Payment verification failed",verificationData.message);
+          navigate(`/details/${verificationData.print_job_id}`);
         }
     } catch (error) {
         console.log("Payment verification error",error);

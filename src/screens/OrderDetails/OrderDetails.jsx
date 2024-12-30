@@ -71,14 +71,22 @@ const OrderDetails = () => {
                     </div>
                     <div className='paymentContainer'>
                         <div className='text-center mt-4'> Document Details</div>
-                        {orderDetails.print_job?.is_printed && (
+                        {orderDetails.print_job?.is_printed ? (
                             <div className='info'>
                                 <h4>Printed</h4>
                                 <div className='arrow'>---</div>
                                 <div className='data'>
                                     <div className='success'>
-                                       <img src={success} />
+                                        <img src={success} />
                                     </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className='info text-red-600 font-bold'>
+                                <h4>NOT PRINTED YET</h4>
+                                <div className='arrow'>---</div>
+                                <div className='data bg-red-300 rounded p-2'>
+                                    LET THE OWNER KNOW ABOUT THIS!
                                 </div>
                             </div>
                         )}
