@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://7de6-2401-4900-1c73-3dc-1459-bf6-76e7-baf7.ngrok-free.app/';
+export const BASE_URL = 'https://ezprints.pythonanywhere.com/';
