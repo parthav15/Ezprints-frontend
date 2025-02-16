@@ -124,7 +124,7 @@ const DocumentUploadModal = ({ isOpen, onClose }) => {
                 image: "https://developers.ntftravel.com/media/images/logo2.jpg",
                 order_id: orderData.order_id,
                 handler: function (response) {
-                    verifyPayment(response);
+                    verifyPayment(response, printId);
                 },
                 modal: {
                   ondismiss: function() {
@@ -150,7 +150,7 @@ const DocumentUploadModal = ({ isOpen, onClose }) => {
     }
 };
 
-const verifyPayment = async (paymentDetails) => {
+const verifyPayment = async (paymentDetails, printId) => {
     try {
         const response = await fetch(`${BASE_URL}payments/verify_order/`,{
             method: 'POST',
@@ -177,12 +177,12 @@ const verifyPayment = async (paymentDetails) => {
         setTimeout(() => {
             
             setPopupOpen(false);
-            navigate(`/details/${verificationData.print_job_id}`);
+            navigate(`/details/${printId}`);
           }, 3000);
 
         }else{
           console.log("Payment verification failed",verificationData.message);
-          navigate(`/details/${verificationData.print_job_id}`);
+          navigate(`/details/${printId}`);
         }
     } catch (error) {
         console.log("Payment verification error",error);
